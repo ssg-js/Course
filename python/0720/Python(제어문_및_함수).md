@@ -520,8 +520,6 @@ def family(**kwargs):
 family(father = '아부지', mother = '어무니', baby = '아기')
 ```
 
-
-
 ### Python의 범위(Scope)
 
 #### Python의 범위(Scope)
@@ -554,7 +552,7 @@ family(father = '아부지', mother = '어무니', baby = '아기')
 
 - 파이썬에서 사용되는 이름(식별자)들은 이름공간(namespace)에 저장되어 있음
 
-- 아래와 같은 순서로 이름을 찾아나가며, LEGB Rule이라고 부름
+- 아래와 같은 순서로 이름을 찾아나가며, **"LEGB Rule"** 이라고 부름
   
   - Local scope : 지역 범위(현재 작업 중인 범위)
   
@@ -606,8 +604,6 @@ def func1(a):
 - glabal, nonlocal 키워드의 경우 코드가 복잡해지면서 예기치 못한 오류가 발생할 수 있음
 
 - 가급적 사용하지 않는 것을 권장하며, 함수로 값을 바꾸고자 한다면 항상 argument로 넘기고 리턴 값을 사용 하는 것을 추천
-
-
 
 ### 함수 응용
 
@@ -672,8 +668,6 @@ def func1(a):
 - 재귀 호출은 변수 사용을 줄여줄 수 있음
 
 - 재귀 호출은 입력 값이 커질 수록 연산 속도가 오래 걸림
-
-
 
 ### 모듈
 
@@ -761,8 +755,6 @@ from package.module import var, fuction, Class
   ```
 
 - 일반적으로 패키지를 기록하는 파일의 이름은 requirements.txt로 정의함
-
-
 
 ### 사용자 모듈과 패키지
 
