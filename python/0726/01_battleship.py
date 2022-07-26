@@ -80,14 +80,16 @@ while True:
     ]
     # 2-6) 컴퓨터의 공격이 성공한 경우
     if player_sea[computer_attack_index] == 1:
-        print(f'플레이어는 컴퓨터의 해역 {computer_attack_index}번째 칸을 공격하였으나, 공격에 실패하였습니다!')
-        print(f'컴퓨터는 플레이어의 해역 {computer_attack_index}번째 칸을 공격하였고, 플레이어의 배는 피격되었습니다.')
+        print(f'플레이어는 컴퓨터의 해역 {computer_attack_index + 1}번째 칸을 공격하였으나, 공격에 실패하였습니다!')
+        print(
+            f'컴퓨터는 플레이어의 해역 {computer_attack_index + 1}번째 칸을 공격하였고, 플레이어의 배는 피격되었습니다.'
+        )
         print(f'게임이 종료되었습니다! {round}라운드 만에 컴퓨터의 승리입니다!')
         break
     # 2-7) 컴퓨터의 공격이 실패한 경우
     else:
-        print(f'플레이어는 컴퓨터의 해역 {player_attack_index}번째 칸을 공격하였으나, 공격에 실패하였습니다!')
-        print(f'컴퓨터는 플레이어의 해역 {computer_attack_index}번째 칸을 공격하였으나, 공격에 실패하였습니다!')
+        print(f'플레이어는 컴퓨터의 해역 {player_attack_index + 1}번째 칸을 공격하였으나, 공격에 실패하였습니다!')
+        print(f'컴퓨터는 플레이어의 해역 {computer_attack_index + 1}번째 칸을 공격하였으나, 공격에 실패하였습니다!')
         computer_attacked[computer_attack_index] = True
 
     round += 1
