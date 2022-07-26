@@ -23,10 +23,10 @@ round = 1  # 게임 라운드
 # 1. 게임 준비
 while True:
     # 1-1) 플레이어의 배 시작 위치 고르기
-    player_index = int(input('배를 위치시킬 시작점을 고르세요.: '))
+    player_index = int(input('배를 위치시킬 시작점을 고르세요.: ')) - 1
 
     # 1-2) 범위를 벗어난 시작점을 고른 경우
-    if (player_index < 2) or (player_index > 14):
+    if (player_index < 1) or (player_index > 13):
         print('-----해당 위치에는 배를 둘 수 없습니다.-----')
     else:
         break
@@ -49,25 +49,25 @@ while True:
 
     # 2-2) 플레이어의 공격 위치 선택
     while True:
-        player_attack_index = int(input('공격할 위치를 선택하세요. : '))
+        player_attack_index = int(input('공격할 위치를 선택하세요. : ')) - 1
 
         if player_attack_index < 1 and player_index > 13:
             print('해역의 범위에서 벗어난 위치를 선택하셨습니다. 다시 선택해 주세요.')
-        elif player_attacked[player_attack_index - 1] == True:
+        elif player_attacked[player_attack_index] == True:
             print('이미 공격한 위치를 선택하셨습니다. 다시 선택해 주세요')
         else:
             break
 
     print(f'<{round}라운드 결과!>')
     # 2-3) 플레이어의 공격이 성공한 경우
-    if computer_sea[player_attack_index - 1] == 1:
+    if computer_sea[player_attack_index] == 1:
         print('컴퓨터의 해역 : ', computer_sea)
         print(f'플레이어는 컴퓨터의 해역 {player_attack_index}번째 칸을 공격하였고, 컴퓨터의 배는 피격되었습니다.')
         print(f'게임이 종료되었습니다! {round}라운드 만에 플레이어의 승리입니다!')
         break
     # 2-4) 플레이어의 공격이 실패한 경우
     else:
-        player_attacked[player_attack_index - 1] = True
+        player_attacked[player_attack_index] = True
 
     # 2-5) 컴퓨터의 공격 위치 지정
     # 컴퓨터가 공격하지 않은 위치를 나타내는 리스트
@@ -79,7 +79,7 @@ while True:
         random.randrange(len(computer_not_attacked))
     ]
     # 2-6) 컴퓨터의 공격이 성공한 경우
-    if player_sea[computer_attack_index - 1] == 1:
+    if player_sea[computer_attack_index] == 1:
         print(f'플레이어는 컴퓨터의 해역 {computer_attack_index}번째 칸을 공격하였으나, 공격에 실패하였습니다!')
         print(f'컴퓨터는 플레이어의 해역 {computer_attack_index}번째 칸을 공격하였고, 플레이어의 배는 피격되었습니다.')
         print(f'게임이 종료되었습니다! {round}라운드 만에 컴퓨터의 승리입니다!')
