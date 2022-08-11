@@ -20,7 +20,7 @@ for tc in range(1, t + 1):
     n = int(input())
     for i in range(n):
         li = list(map(int, input().split()))
-        space.append((li))
+        space.append(li)
 
     di = [0, 1, 0, -1]
     dj = [1, 0, -1, 0]

@@ -9,6 +9,7 @@ for tc in range(1, 10):
     yellow_boxes = list(map(int, input().split()))
     
     sub_box = 0
+
     # 주어진 덤프 수만큼 덤프
     for d in range(dump):
         for i in range(1, len(yellow_boxes)):
@@ -21,6 +22,17 @@ for tc in range(1, 10):
         # 최고점에서 최저점으로 옮기기
         yellow_boxes[-1] -= 1
         yellow_boxes[0] += 1
+
+        # 한번 더
+        for i in range(1, len(yellow_boxes)):
+            # 최댓값이 리스트 제일 오른쪽으로
+            if yellow_boxes[i-1] > yellow_boxes[i]:
+                yellow_boxes[i-1], yellow_boxes[i] = yellow_boxes[i], yellow_boxes[i-1]
+            # 최솟값이 리스트 제일 왼쪽으로
+            if yellow_boxes[-i] < yellow_boxes[-i-1]:
+                yellow_boxes[-i], yellow_boxes[-i-1] = yellow_boxes[-i-1], yellow_boxes[-i]
+
+        # 최고점과 최저점 차이 구하기
         sub_box = yellow_boxes[-1] - yellow_boxes[0]
 
         if sub_box <= 1:
