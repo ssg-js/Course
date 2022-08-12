@@ -22,11 +22,17 @@ for t in range(1, int(input()) + 1):
                     y = dy[di] + i
                     # 위, 아래로 연속된 1의 개수
                     if 0 <= y < n:
-                        while pic(y):
-                            
+                        while pic[y][j]:
+                            if pic[y+dy[di]][i]:
+                                seq += 1
 
+                            else:
+                                break
                     # 좌, 우로 연속된 1의 개수
                     if 0 <= x < m:
+                        while pic[i][x]:
 
+                    if seq > max_seq:
+                        max_seq = seq
 
 
