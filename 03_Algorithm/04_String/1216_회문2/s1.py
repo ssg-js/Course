@@ -17,15 +17,13 @@ for t in range(1, 10 + 1):
                 # 가로 회문 찾기
                 text = grid[i][j:j+m]
                 if text == text[::-1]:
-                    if m > len(pldr):
-                        pldr = text
+                    pldr = text
                 # 세로 회문 찾기
                 text = ''
                 for k in range(m):
-                    text = str(text) + str(grid[j + k][i])
+                    text = text + grid[j + k][i]
                 if text == text[::-1]:
-                    if m > len(pldr):
-                        pldr = text
+                    pldr = text
         if pldr:
             break
 

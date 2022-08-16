@@ -11,6 +11,7 @@ for t in range(1, int(input()) + 1):
 
     n = 0  # a에 들어있는 b의 개수
     i = 0
+
     while i <= len(a)-len(b):
         # b일때
         if a[i:i+len(b)] == b:
