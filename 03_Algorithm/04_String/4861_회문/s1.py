@@ -14,14 +14,20 @@ for t in range(1, int(input()) + 1):
             if pldr == pldr[-1:-len(pldr)-1:-1]:
                 answer = pldr
                 break
-    else:
-        for j in range(n):
-            for i in range(n-m+1):
-                pldr = ''
-                for k in range(m):
-                    pldr += words[i+k][j]
-                if pldr == pldr[-1:-len(pldr)-1:-1]:
-                    answer = pldr
-                    break
+    # else:
+    #     for j in range(n):
+    #         for i in range(n-m+1):
+    #             pldr = ''
+    #             for k in range(m):
+    #                 pldr += words[i+k][j]
+    #             if pldr == pldr[-1:-len(pldr)-1:-1]:
+    #                 answer = pldr
+    #                 break
+            pldr = ''
+            for k in range(m):
+                pldr += words[j + k][i]
+            if pldr == pldr[-1:-len(pldr) - 1:-1]:
+                answer = pldr
+                break
 
     print(f'#{t} {answer}')
