@@ -31,6 +31,6 @@ for i in range(n):
             dfs(i, j)
             result.append(cnt)
 
-sorted(result)
+result.sort()
 print(len(result))
 print(*result, sep='\n')
