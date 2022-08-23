@@ -15,6 +15,6 @@ for char in fomula:
     else:
         x = stack.pop()
         y = stack.pop()
-        stack.append(calculation[char](x, y))
+        stack.append(calculation[char](y, x))
 
 print(stack.pop())

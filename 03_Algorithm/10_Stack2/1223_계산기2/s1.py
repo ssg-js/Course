@@ -48,6 +48,6 @@ for t in range(1, 10 + 1):
         else:
             x = stack.pop()
             y = stack.pop()
-            stack.append(calculation[char](x, y))
+            stack.append(calculation[char](y, x))
 
     print(f'#{t} {stack.pop()}')
