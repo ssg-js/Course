@@ -4,7 +4,7 @@ import sys
 sys.stdin = open('input.txt')
 
 
-def permutations(arr, n):
+def combinations(arr, n):
     if len(arr) == n:
         if sum(arr) == n:
             print(n)
@@ -19,7 +19,7 @@ for t in range(1, int(input()) + 1):
 
     checked = [[False] * length for _ in range(length)]
 
-    permutations([], length)
+    combinations([], length)
 
 
 
