@@ -2,16 +2,17 @@
 # bfs
 
 def emergency_call(v, depth, visited):
-    if len(last) < depth:                           # 연락 받은 순서가 같은 사람 중 제일 처음 연락 받는 경우
-        last.append(infos[v])                       # infos[v] -> []
-    else:
-        last.extend(infos[v])
+    if infos.get(v):
+        if len(last) < depth:                       # 연락 받은 순서가 같은 사람 중 제일 처음 연락 받는 경우
+            last.append(infos[v])                   # infos[v] -> []
+        else:
+            last[depth-1].extend(infos[v])
 
-    visited.append(v)                               # 방문했는지 저장
+        visited.append(v)                           # 방문했는지 저장
 
-    for next_v in infos[v]:
-        if next_v not in visited:
-            emergency_call(next_v, depth + 1, visited)
+        for next_v in infos[v]:
+            if next_v not in visited:
+                emergency_call(next_v, depth + 1, visited)
 
 
 for t in range(1, 11):
@@ -28,5 +29,4 @@ for t in range(1, 11):
     last = []                                       # index : depth, value : 연락받은 사람들
 
     emergency_call(start_node, 1, [])
-
-    print(f'#{f} {max[last[-1]]}')
+    print(f'#{t} {max(last[-1])}')
