@@ -41,6 +41,5 @@ for t in range(1, int(input()) + 1):
     ans = 0
     if (cal[0] * 3 + cal[1]) % 10 == 0:
         ans = cal[0] + cal[1]
-
     print(f'#{t} {ans}')
 
