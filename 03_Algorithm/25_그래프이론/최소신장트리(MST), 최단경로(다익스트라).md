@@ -25,52 +25,49 @@
     - 트리로 집합을 표현 
     
     - parent(각 숫자가 속해있는 집합의 대표값)을 이용
-    
+
 ```python
 # 1. 반복문
 def find_set(node):
     while node != parent[node]:
-    node = parent[node]
+        node = parent[node]
         return node
-    
+
     # # 2. 재귀
     # def find_set(node):
     #     if node != parent[node]:
     #         return find_set(parent[node])
     #     return node
-    
-    
+
+
     # # 3. 재귀 - 경로 압축(부모 노드를 대표값으로 만듦)
     # def find_set(node):
     #     if node != parent[node]:
     #         parent[node] = find_set(parent[node])
     #     return parent[node]
-    
-    
-    n, m = map(int, input().split())  # 정점, 간선(Union 횟수) 개수
-    parent = list(range(n + 1))
-    
-    for _ in range(m):
-        x, y = map(int, input().split())
-        x_root, y_root = find_set(x), find_set(y)  # Find
-    
-        # Union
-        if x_root != y_root:  # 서로소 집합인 경우만 합집합 연산
-            if x_root < y_root:
-                parent[y_root] = x_root
-            else:
-                parent[x_root] = y_root
-    
-    # 출력
-    for i in range(1, n + 1):
-        print(find_set(i), end=' ')
-    
-    print()
-    print(parent)
 
+
+n, m = map(int, input().split())  # 정점, 간선(Union 횟수) 개수
+parent = list(range(n + 1))
+
+for _ in range(m):
+    x, y = map(int, input().split())
+    x_root, y_root = find_set(x), find_set(y)  # Find
+
+    # Union
+    if x_root != y_root:  # 서로소 집합인 경우만 합집합 연산
+        if x_root < y_root:
+            parent[y_root] = x_root
+        else:
+            parent[x_root] = y_root
+
+# 출력
+for i in range(1, n + 1):
+    print(find_set(i), end=' ')
+
+print()
+print(parent)
 ```
-
-
 
 - 프림
   
@@ -79,7 +76,7 @@ def find_set(node):
   - 임의의 정점 선택 -> MST에서 갈 수 있는 모든 정점 중에 가장 최소 비용 선택
   
   - visited(방문 여부 -> 포함 여부)와 distance(각 정점으로 가는 최솟값)
-    
+
 ```python
 # 1) 일반적인 프림 알고리즘
 
@@ -122,14 +119,12 @@ for _ in range(m):
 print(prim(1))  # 1번 정점에서 시작
 ```
 
-
-
 - 힙 : 안에가 어떻게 되있든 pop()하면 최솟값이 나옴
   
   - 우선순위 큐 : 우선순위에 따라 pop() -> 힙과 비스무래함
   
   - 파이썬에서는 **heapq**라는 모듈이 있음
-    
+
 ```python
 # 2) 힙을 이용한 프림 알고리즘
 
@@ -159,18 +154,16 @@ def prim(start):
       return cost
 
 
-  n, m = map(int, input().split())  # 정점, 간선 개수
-  graph = [[] for _ in range(n + 1)]
+n, m = map(int, input().split())  # 정점, 간선 개수
+graph = [[] for _ in range(n + 1)]
 
-  for _ in range(m):
-      s, e, w = map(int, input().split())  # 시작 정점, 도착 정점, 비용
-      graph[s].append((e, w))
-      graph[e].append((s, w))
+for _ in range(m):
+    s, e, w = map(int, input().split())  # 시작 정점, 도착 정점, 비용
+    graph[s].append((e, w))
+    graph[e].append((s, w))
 
-  print(prim(1))  # 1번 정점에서 시작
+print(prim(1))  # 1번 정점에서 시작
 ```
-
-
 
 #### 그럼 크루스칼과 프림은 도대체 언제쓰냐???
 
@@ -187,7 +180,7 @@ def prim(start):
 - 음의 간선 X, 그리디 알고리즘
 
 - distance(간선의 값이 누적됨)
-  
+
 ```python
 # 1) 일반적인 다익스트라 알고리즘
 
@@ -232,8 +225,6 @@ for _ in range(m):
 dijkstra(1) # 1번 정점에서 시작
  print(distance)
 ```
-
- 
 
 - 힙을 이용한 다익스트라 알고리즘
 
