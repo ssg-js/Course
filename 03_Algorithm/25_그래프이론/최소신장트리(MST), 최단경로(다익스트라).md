@@ -33,18 +33,18 @@ def find_set(node):
         node = parent[node]
         return node
 
-    # # 2. 재귀
-    # def find_set(node):
-    #     if node != parent[node]:
-    #         return find_set(parent[node])
-    #     return node
+# # 2. 재귀
+# def find_set(node):
+#     if node != parent[node]:
+#         return find_set(parent[node])
+#     return node
 
 
-    # # 3. 재귀 - 경로 압축(부모 노드를 대표값으로 만듦)
-    # def find_set(node):
-    #     if node != parent[node]:
-    #         parent[node] = find_set(parent[node])
-    #     return parent[node]
+# # 3. 재귀 - 경로 압축(부모 노드를 대표값으로 만듦)
+# def find_set(node):
+#     if node != parent[node]:
+#         parent[node] = find_set(parent[node])
+#     return parent[node]
 
 
 n, m = map(int, input().split())  # 정점, 간선(Union 횟수) 개수
