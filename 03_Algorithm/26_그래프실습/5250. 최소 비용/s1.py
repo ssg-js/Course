@@ -7,7 +7,10 @@ def dijkstra(x, y):
     visited[x][y] = True
     distance[x][y] = 0
 
-    
+    for near_x, near_y, f in heights[x][y]:
+        distance[near_x][near_y] = f
+
+
 
 
 dx = [1, 0, -1, 0]
