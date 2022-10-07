@@ -36,6 +36,12 @@ for i in range(N):
         if tomatoes[N][M] == 1:
             arr.append([i, j])
 
+bfs(arr)
 
+result = cnt
+if 0 in tomatoes:
+    result = -1
+
+print(result)
 
 
