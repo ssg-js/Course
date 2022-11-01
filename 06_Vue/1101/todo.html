@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <select v-model="selected" name="" id="">
+      <option value="전체">전체</option>
+      <option value="진행중">진행중</option>
+      <option value="완료">완료</option>
+    </select>
+    <input v-model="write" type="text" name="" id="">
+    <button @click="save">+</button>
+    <br>
+    <div v-if="selected == '전체'">
+      <ul>
+        <li v-for="all in alls">
+          <input type="checkbox" v-model="check" true-value="yes" false-value="no">
+          {{ all }}
+        </li>
+      </ul>
+    </div>
+    <div v-else-if="selected == '진행중'">
+      <ul>
+        <li v-for="ing in ings">
+          {{ ing }}
+        </li>
+      </ul>
+    </div>
+    <div v-else-if="selected == '완료'">
+      <ul>
+        <li v-for="done in dones">
+          {{ done }}
+        </li>
+      </ul>
+    </div>
+    <br>
+    <button @click="remove">완료된 할 일 지우기</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        selected: '전체',
+        write: '',
+        alls: [],
+      },
+      methods: {
+        save: function () {
+          const write = this.write
+          this.alls.push({
+            write: false
+          })
+        },
+        remove: function () {
+          this.dones = []
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
