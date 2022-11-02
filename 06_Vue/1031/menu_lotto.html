@@ -10,55 +10,37 @@
 
 <body>
   <div id="app">
-    <h3>Increase number</h3>
-    <p>{{ number }}</p>
-    <button @click="number++">+</button>
+    <h1>점심메뉴</h1>
+    <p>{{ menu }}</p>
+    <button @click="menuchange">Pick One</button>
     <hr>
 
-    <!-- <h3>Change name</h3>
-    <p>{{ name }}</p>
-    <input type="text" v-model="name">
-    <hr> -->
+    <h1>로또</h1>
+    <p>{{ numbers }}</p>
+    <button @click="lottonumbers">Get Lucky Numbers</button>
+    <hr>
 
-    <!-- <h3>push myObj</h3>
-    <p>{{ myObj }}</p>
-    <button @click="itemChange">change Item</button> -->
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-        number: 0,
-        // name: '',
-        // myObj: {completed: true}
+        menu: '국밥',
+        numbers: [1, 4, 6, 30, 39, 43],
       },
       methods: {
-        // nameChange: function () {
-        //   console.log('name is changed')
-        // },
-
-        // itemChange: function () {
-        //   this.myObj.completed = !this.myObj.completed
-        // }
+        menuchange: function () {
+          this.menu = _.sample(['국밥', '짜장면', '햄버거'])
+        },
+        lottonumbers: function () {
+          const allnum = _.range(1, 46)
+          this.numbers = _.sampleSize(allnum, 6)
+        }
       },
-      watch: {
-        number: function (val, oldVal) {
-          console.log(val, oldVal)
-        },
 
-        // name: {
-        //   handler: 'nameChange'
-        // },
-
-        myObj: {
-          handler: function (val) {
-            console.log(val)
-          },
-          deep: true
-        },
-      }
     })
   </script>
 </body>
