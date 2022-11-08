@@ -394,8 +394,70 @@
 
 ### Read Todo
 
-#### State 세팅
 
-- 출력을 위한 기본 todo 작성
 
-(71) (-1:17:03)
+### Local Storage
+
+#### 개요
+
+- 브라우저의 Local Storage에 todo 데이터를 저장하여 브라우저를 종료하고 다시 실행해도 데이터가 보존될 수 있도록 하기
+
+#### Window.localStorage
+
+- 브라우저에서 제공하는 저장공간 중 하나인 Local Storage에 관련된 속성
+
+- 데이터가 문자열 형태로 저장됨
+
+- 관련 메서드
+  
+  - <mark>**setItem(key, value)**</mark> - key, value 형태로 데이터 저장
+  
+  - <mark>**getItem(key)**</mark> - key에 해당하는 데이터 조회
+
+#### Local Storage 실습
+
+- todos 배열을 Local Storage에 저장하기
+
+- 데이터가 문자열 형태로 저장되어야 하기 때문에 JSON.stringfy를 사용해 문자열로 변환해주는 과정 필요
+
+- state를 변경하는 작업이 아니기 때문에 mutation이 아닌 actions에 작성
+
+- todos 생성, 삭제, 수정시에 모두 saveTodosToLocalStorage actino 메서드가 실행 되도록 함
+
+- LOAD_TODOS mutation 메서드 작성
+
+- 문자열 데이터를 다시 object 타입으로 변환(JSON.parse)하여 저장
+
+#### vuex-persistedstate
+
+- Vuex stae를 자동으로 브라우저의 Local Storage에 저장해주는 라이브러리 중 하나
+
+- 페이지가 새로고침 되어도 Vuex state를 유지시킴
+
+- Local Storage에 저장된 data를 자동으로 state로 불러옴
+
+- 설치
+  
+  ![](Vuex_assets/2022-11-08-09-35-03-image.png)
+
+- 적용
+  
+  ![](Vuex_assets/2022-11-08-09-37-20-image.png)
+
+- localStorage 관련 코드를 모두 주석 처리하기
+
+
+
+## 마무리
+
+#### 그냥 mutations으로만 state를 변경하면 안될까?
+
+- 가능
+
+- 저장소의 각 컨셉이 존재
+
+#### Vuex, 언제 사용할까?
+
+- 애플리케이션이 단수하다면 Vuex가 없는 것이 더 효율적일 수 있음
+
+- 필요할 때 쓰면됨

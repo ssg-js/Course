@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span @click="updateTodoStatus">{{ todo.title }}</span>
+    <span @click="updateTodoStatus" :class="{ 'is-completed': todo.isCompleted }">{{ todo.title }}</span>
     <button @click="deleteTodo">Delete</button>
   </div>
 </template>
@@ -25,5 +25,8 @@ export default {
 </script>
 
 <style>
+  .is-completed {
+    text-decoration: line-through;
+  }
 
 </style>

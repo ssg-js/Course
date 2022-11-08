@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <h1>Todo List</h1>
+    <h2>모든 Todo 개수 : {{ allTodosCount }}</h2>
+    <h2>완료된 Todo 개수 : {{ completedTodosCount }}</h2>
+    <h2>미완료된 Todo 개수 : {{ unCompletedTodosCount }}</h2>
     <TodoList/>
     <TodoForm/>
+    <!-- <button @click="loadTodos">Todo 불러오기</button> -->
   </div>
 </template>
 
@@ -15,6 +19,22 @@ export default {
   components: {
     TodoList,
     TodoForm
+  },
+  computed: {
+    allTodosCount() {
+      return this.$store.getters.allTodosCount
+    },
+    completedTodosCount() {
+      return this.$store.getters.completedTodosCount
+    },
+    unCompletedTodosCount() {
+      return this.$store.getters.unCompletedTodosCount
+    }
+  },
+  methods: {
+    // loadTodos() {
+    //   this.$store.dispatch('loadTodos')
+    // }
   }
 }
 </script>
