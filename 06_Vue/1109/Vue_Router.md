@@ -1,4 +1,4 @@
-# Vue Rounter
+# Vue Router
 
 # INDEX
 
