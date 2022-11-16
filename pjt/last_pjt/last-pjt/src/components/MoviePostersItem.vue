@@ -1,5 +1,9 @@
 <template>
-  <div>MoviePostersItem</div>
+  <b-carousel-slide
+    caption="First slide"
+    text=""
+    img-src=""
+  ></b-carousel-slide>
 </template>
 
 <script>

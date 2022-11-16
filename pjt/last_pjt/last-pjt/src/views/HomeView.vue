@@ -1,14 +1,9 @@
 <template>
   <div>
-    HOME
-    
     <MovieSearch/>
-  
     <MoviePosters/>
     <MovieCategories/>
     <MovieFavorite/>
-        
-    
   </div>
 </template>
 
@@ -30,5 +25,5 @@ export default {
 </script>
 
 <style>
-
+  
 </style>

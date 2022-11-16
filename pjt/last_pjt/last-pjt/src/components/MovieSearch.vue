@@ -1,5 +1,8 @@
 <template>
-  <div>MovieSearch</div>
+  <div>
+    <input type="text" placeholder="검색" style="width: 80%">
+    <button>search</button>
+  </div>
 </template>
 
 <script>
