@@ -1,0 +1,9 @@
+def Me(opp, turn, opp_prev, opp_last_pattern) :
+    opp_sum = 0
+    for nums in opp_last_pattern:
+        opp_sum += sum(nums)
+    opp_sum += opp_prev
+    rand_num = int(((turn + opp) * opp_sum * 7 ** 4) % 9)
+    rand_animal = [1, 1, 1, 2, 2, 2, 2, 2, 0]
+
+    return rand_animal[rand_num]

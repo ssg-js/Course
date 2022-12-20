@@ -34,4 +34,3 @@ def solution(new_id):
         answer = answer + answer[-1]
 
     return answer
-
