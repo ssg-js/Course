@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d877b8d5-38a9-4336-b2fe-d8651df1d6ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Course.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_Algorithm/23_분할정복 이론/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_Algorithm/23_분할정복 이론/.idea/23_분할정복 이론.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_Algorithm/23_분할정복 이론/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_Algorithm/23_분할정복 이론/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_Algorithm/23_분할정복 이론/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_Algorithm/23_분할정복 이론/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_Algorithm/23_분할정복 이론/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Study/Programmers_64061. 크레인 인형 뽑기 게임/s1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm_Study/baekjoon/15686. 치킨 배달/15686.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Study/baekjoon/15686. 치킨 배달/s1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
