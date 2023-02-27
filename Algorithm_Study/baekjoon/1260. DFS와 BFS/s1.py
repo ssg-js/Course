@@ -23,7 +23,7 @@ def bfs(v):
         list_bfs.append(now_v)
         for next_v in sorted(edges[now_v]):
             if not visited[next_v]:
-                visited[v] = True
+                visited[next_v] = True
                 queue.append(next_v)
 
 
